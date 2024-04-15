@@ -57,7 +57,7 @@ function Filtros() {
 
   }, [codLote])
 
-  const [datosFiltrados, setDatosFiltrados] = useState('')
+  const [datosFiltrados, setDatosFiltrados] = useState(' ')
 
   const handleFiler = (event) => {
     console.log(event.target.value)
