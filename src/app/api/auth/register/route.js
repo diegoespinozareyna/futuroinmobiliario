@@ -33,15 +33,17 @@ export async function POST(request) {
             })
         }
 
-        console.log(data)
+        // console.log(data)
         const hashedPassword = await bcrypt.hash(data.password, 10)
-        const newUser = await db.user.create({
-            data: {
-                username: data.username,
-                email: data.email,
-                password: hashedPassword,
+        const newUser = await db.user.create(
+            {
+                data: {
+                    username: data.username,
+                    email: data.email,
+                    password: hashedPassword,
+                }
             }
-        })
+        )
 
         const { password: _, ...user } = newUser
 

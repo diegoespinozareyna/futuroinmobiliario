@@ -43,7 +43,6 @@ function LoginPage() {
       <div className="h-[calc(100vh-7rem)] flex justify-center items-center p-4">
         <form onSubmit={onSubmit} className="w-full md:w-3/4">
           
-
           <div className="w-full flex flex-col md:flex-row">
             {/* <div className="w-full md:w-1/2 flex flex-col md:flex-row text-white border border-transparent">
               <Image src="/login.jpg" alt="img-login" width={900} height={700} />

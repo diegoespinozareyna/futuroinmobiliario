@@ -16,24 +16,33 @@ model User {
   updatedAt DateTime @updatedAt
 }
 
-model TableGeneral {
+model TableTerrenos {
   id Int @id @default(autoincrement())
-  Zona String
-  Inmobiliaria String
-  Proyecto String
-  Tipo_Proyecto String
-  Lugar String
-  Ubicacion String
-  Metros Int
-  Etapa String
-  Referencia String
-  Precio_Dolar Float
-  Precio_Soles Float
-  Etapas Int
-  Independizado Boolean
-  Servicios_Basicos Boolean
-  Fecha_Entrega DateTime
-  Status String
-  Tipo_Compra String
-  Publicidad String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  zona String
+  inmobiliaria String
+  proyecto String
+  tipoProyecto String  
+  lugar String
+  ubicacion String
+  metros String
+  etapa String
+  referencia String
+  precioDolares String
+  precioSoles String
+  etapas String
+  independizado String
+  serviciosBasicos String
+  fechaEntrega String
+  codLote String @unique
+  datosCliente String
+  celCliente String
+  tipoCliente String
+  asesor String
+  medio String
+  status String
+  tipoCompra String
+  tiempo String
+  publicidad String
 }
