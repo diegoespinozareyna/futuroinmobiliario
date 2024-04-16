@@ -7,23 +7,23 @@ import bcrypt from 'bcrypt'
 export const options = {
 
     providers: [
-        GitHubProvider({
-            profile(profile) {
-                console.log("Profile Github: ", profile)
+        // GitHubProvider({
+        //     profile(profile) {
+        //         console.log("Profile Github: ", profile)
 
-                let userRole = "GitHub User"
-                if (profile?.email == "soportemarketingcorporation@gmail.com" || profile?.email == "diegoespinozareyna@gmail.com") {
-                    userRole = "admin"
-                }
+        //         let userRole = "GitHub User"
+        //         if (profile?.email == "soportemarketingcorporation@gmail.com" || profile?.email == "diegoespinozareyna@gmail.com") {
+        //             userRole = "admin"
+        //         }
 
-                return {
-                    ...profile,
-                    role: userRole
-                }
-            },
-            clientId: process.env.GITHUB_ID,
-            clientSecret: process.env.GITHUB_SECRET,
-        }),
+        //         return {
+        //             ...profile,
+        //             role: userRole
+        //         }
+        //     },
+        //     clientId: process.env.GITHUB_ID,
+        //     clientSecret: process.env.GITHUB_SECRET,
+        // }),
         // GoogleProvider({
         //     profile(profile) {
         //         console.log("Profile Google: ", profile)
@@ -72,16 +72,16 @@ export const options = {
         signIn: '/auth/login',
         newUser: '/auth/new-account',
     },
-    callbacks: {
-        async jwt({ token, user }) {
-            if (user) token.role = user.role
-            return token
-        },
-        async session({ session, token }) {
-            if (session?.user) session.user.role = token.role
-            return session
-        }
-    },
+    // callbacks: {
+    //     async jwt({ token, user }) {
+    //         if (user) token.role = user.role
+    //         return token
+    //     },
+    //     async session({ session, token }) {
+    //         if (session?.user) session.user.role = token.role
+    //         return session
+    //     }
+    // },
     session: {
         // Configura la duración máxima de la sesión en segundos
         maxAge: 24 * 60 * 60, // 24 horas en segundos
