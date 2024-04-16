@@ -1,13 +1,13 @@
 import { getServerSession } from 'next-auth'
 import Link from 'next/link'
 import React from 'react'
-import { authOptions } from '../api/auth/[...nextauth]/route'
+import { options } from '../api/auth/[...nextauth]/options'
 import NavDashboard from './NavDashboard'
 import Image from 'next/image'
 
 async function Nabvar() {
 
-    const session = await getServerSession(authOptions)
+    const session = await getServerSession(options)
     console.log(session)
 
     return (
